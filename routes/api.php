@@ -32,20 +32,21 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 Route::get('data', function () {
+    $data = [];
+    if (!Cache::has('data')) {
     $EtherScanapiKey = '39XWGCRG2VKR6GXFDG85V5HI5IES9S2G4A';
     $coinMarketCapApiKey = '5a646371-d37c-4b67-8e91-8868991be665';
-    $conmarketCapSandBoxApiKey = '4b49315e-e912-4bc6-b750-d057380bc6a1';
     $ethAddress = '0xab69e2886AF9eF742b15d28FC103f7B41E1e37c2';
     $coinMarketCapHeaders = [
         'Accepts: application/json',
-        'X-CMC_PRO_API_KEY: ' . $conmarketCapSandBoxApiKey,
+        'X-CMC_PRO_API_KEY: ' . $coinMarketCapApiKey,
         'Accept-Encoding: deflate, <gzip></gzip>'
     ];
     $bitcoinTicker = 1;
     $ethereumTicker = 1027;
     
     $apiLocalBitcoinUrl = 'https://localbitcoins.com/bitcoinaverage/ticker-all-currencies/';
-    $apiCoinMarketCapUrl = 'https://sandbox-api.coinmarketcap.com/v1/cryptocurrency/quotes/latest?id=';
+    $apiCoinMarketCapUrl = 'https://pro-api.coinmarketcap.com/v1/cryptocurrency/quotes/latest?id=';
     $apiEthermineUrl = 'https://api.ethermine.org/miner/' . $ethAddress . '/dashboard';
     $apiEtherScanUrl = 'https://api.etherscan.io/api?module=account&action=balance&address='. $ethAddress . '&tag=latest&apikey='. $EtherScanapiKey;
     
@@ -68,5 +69,10 @@ Route::get('data', function () {
     'wallet'=> number_format($etherScanResponse['result']/1000000000000000000,4),
     'miner_balance'=> number_format($ethermineResponse['data']['currentStatistics']['unpaid']/1000000000000000000,4)
 ]);
+$expiresAt = Carbon\Carbon::now()->addMinutes(15);
+Cache::put('data', $data, $expiresAt);
+} else {
+    $data = Cache::get('data');
+}
 return response()->json($data);
 });
