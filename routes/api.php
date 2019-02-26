@@ -64,7 +64,7 @@ Route::get('data', function () {
     foreach($ethermineResponse['data']['statistics'] as $statistic){
         $statistics_current->push(number_format($statistic['currentHashrate']/1000000,2));
         $statistics_reported->push(number_format($statistic['reportedHashrate']/1000000,2));
-        $statistics_time->push(Carbon\Carbon::createFromTimestamp($statistic['time'])->format('h:i A')->locale('es_VE'));
+        $statistics_time->push(Carbon\Carbon::createFromTimestamp($statistic['time'])->locale('es_VE')->format('h:i A'));
     }
     $data = collect([
     'bitcoin_usd'=> number_format($bitcoin_usd,2),
