@@ -58,6 +58,12 @@ Route::get('data', function () {
     $bitcoin_usd = $coinMarketResponseBitcoin['data'][1]['quote']['USD']['price'];
     $ethereum_usd = $coinMarketResponseEthereum['data'][1027]['quote']['USD']['price'];
 
+    $statistics_current = collect([]);
+    $statistics_reported = collect([]);
+    foreach($ethermineResponse['data']['statistics'] as $statistic){
+        $statistics_current->push(number_format($statistic['currentHashrate']/1000000,2));
+        $statistics_reported->push(number_format($statistic['reportedHashrate']/1000000,2));
+    }
     $data = collect([
     'bitcoin_usd'=> number_format($bitcoin_usd,2),
     'ethereum_usd'=> number_format($ethereum_usd,2),
@@ -67,7 +73,9 @@ Route::get('data', function () {
     'miner_hashrate_actual'=> number_format($ethermineResponse['data']['currentStatistics']['currentHashrate']/1000000,2),
     'miner_hashrate_reportado'=> number_format($ethermineResponse['data']['currentStatistics']['reportedHashrate']/1000000,2),
     'wallet'=> number_format($etherScanResponse['result']/1000000000000000000,4),
-    'miner_balance'=> number_format($ethermineResponse['data']['currentStatistics']['unpaid']/1000000000000000000,4)
+    'miner_balance'=> number_format($ethermineResponse['data']['currentStatistics']['unpaid']/1000000000000000000,4),
+    'miner_statistics_reported'=> $statistics_reported->toArray(),
+    'miner_statistics_current'=> $statistics_current->toArray(),
 ]);
 $expiresAt = Carbon\Carbon::now()->addMinutes(15);
 Cache::put('data', $data, $expiresAt);
