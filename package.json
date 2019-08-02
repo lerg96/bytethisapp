@@ -21,7 +21,9 @@
   "dependencies": {
     "animate.css": "^3.5.2",
     "aos": "^2.2.0",
+    "bootstrap-less": "^3.3.8",
     "devicon": "^2.0.0",
+    "font-awesome": "^4.7.0",
     "fullpage.js": "^2.9.4",
     "granim": "^1.0.6",
     "holderjs": "^2.9.4",

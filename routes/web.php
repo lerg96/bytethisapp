@@ -1,4 +1,6 @@
 <?php
+use Illuminate\Http\Request;
+use App\ContactUs;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,4 +19,12 @@ Route::get('/', function () {
 Route::get('/lang/{lang}', function ($lang) {
     App::setLocale($lang);
     return view('basic');;
+});
+
+Route::post('/contactus', function(Request $request) {
+    // $this->validate($request, [ 'name' => 'required', 'email' => 'required|email', 'message' => 'required', 'subject' => 'required' ]);
+    unset($request['_token']);
+    ContactUs::create($request->all());
+    // dd($request->all());
+    return back()->withSuccess(__('messages.thanks_contact')); 
 });

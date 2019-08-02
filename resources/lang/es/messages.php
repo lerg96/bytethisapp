@@ -26,5 +26,6 @@ return [
     'product' => 'Ayuda con productos',
     'message' => 'Mensaje',
     'sumit' => 'Enviar Mensaje',
-    'send' => '¡Envia tu mensaje!'
+    'send' => '¡Envia tu mensaje!',
+    'thanks_contact' => 'Gracias por contactarnos!'
 ];

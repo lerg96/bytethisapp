@@ -84,6 +84,7 @@ $(document).ready(function () {
     const $window = $(window);
     console.log($window.width());
     if($window.width() <= 500 ){
+        $('#jumbotronDiv').removeClass('jumbotron');
         swal({
             title: '¿Pantalla completa?',
             text: "Este sitio web se visualiza mejor a pantalla completa",
@@ -110,5 +111,39 @@ $(document).ready(function () {
             }
 
         })
+    }
+
+    $('#btnContactUs').on('click',function(){
+        const name = document.getElementById('name').value
+        const subject = document.getElementById('subject').value
+        const message = document.getElementById('message').value
+        const email = document.getElementById('email').value
+
+        if(name && subject && message && email) {
+            axios.post('/contactus',{name: name, subject: subject, message:message, email:email}).then(result => {
+                swal({
+                    type: 'success',
+                    title: 'Enviado con exito :)'
+                });
+            })
+        }
+    });
+
+    (function (i, s, o, g, r, a, m) {
+        i['GoogleAnalyticsObject'] = r;
+        i[r] = i[r] || function () {
+            (i[r].q = i[r].q || []).push(arguments)
+        }, i[r].l = 1 * new Date();
+        a = s.createElement(o),
+            m = s.getElementsByTagName(o)[0];
+        a.async = 1;
+        a.src = g;
+        m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+    ga('create', 'UA-104934128-1', 'auto');
+    ga('send', 'pageview');
+
+    window.onload = function () {
+        $(".loader").fadeOut(1000)
     }
 });

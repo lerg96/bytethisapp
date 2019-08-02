@@ -67,11 +67,11 @@ Route::get('data', function () {
         $statistics_time->push(Carbon\Carbon::createFromTimestamp($statistic['time'])->timezone('America/Caracas')->format('h:i A'));
     }
     $data = collect([
-    'bitcoin_usd'=> number_format($bitcoin_usd,2),
-    'ethereum_usd'=> number_format($ethereum_usd,2),
-    'bitcoin_ves_1h'=> number_format(($localBitcoinResponse['VES']['avg_1h']/$bitcoin_usd),2),
-    'bitcoin_ves_12h'=> number_format(($localBitcoinResponse['VES']['avg_12h']/$bitcoin_usd),2),
-    'bitcoin_ves_24h'=> number_format(($localBitcoinResponse['VES']['avg_24h']/$bitcoin_usd),2),
+    'bitcoin_usd'=> number_format($bitcoin_usd,2), // Listo
+    'ethereum_usd'=> number_format($ethereum_usd,2), // Listo
+    'bitcoin_ves_1h'=> number_format(($localBitcoinResponse['VES']['avg_1h']/$bitcoin_usd),2), // Listo
+    'bitcoin_ves_12h'=> number_format(($localBitcoinResponse['VES']['avg_12h']/$bitcoin_usd),2), // Listo
+    'bitcoin_ves_24h'=> number_format(($localBitcoinResponse['VES']['avg_24h']/$bitcoin_usd),2), // Listo
     'miner_hashrate_actual'=> number_format($ethermineResponse['data']['currentStatistics']['currentHashrate']/1000000,2),
     'miner_hashrate_reportado'=> number_format($ethermineResponse['data']['currentStatistics']['reportedHashrate']/1000000,2),
     'wallet'=> number_format($etherScanResponse['result']/1000000000000000000,4),
