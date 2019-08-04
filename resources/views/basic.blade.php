@@ -382,6 +382,33 @@
 
             </div>
         </section>
+
+        <!-- Info -->
+        <section id="section5" class="section">
+            <div data-aos="zoom-in" class="container">
+                <div class="col-md-12 text-center hidden-xs">
+                    <h1>Información adicional</h1>
+                </div>
+                <div class="row">
+                    <div class="col-md-4 text-center">
+                        <i class="fa fa-envelope" aria-hidden="true" style="font-size: 4vw;color: orange;"></i>
+                        <br>guillverac@gmail.com <br> lerg96@gmail.com
+                    </div>
+                    <hr class="hidden-md hidden-lg">
+                    <div class="col-md-4 text-center">
+                        <i class="fa fa-phone" aria-hidden="true" style="font-size: 4vw;color: orange;"></i>
+                        <br>+584246333813 <br> +14079528476
+                    </div>
+                    <hr class="hidden-md hidden-lg">
+                    <div class="col-md-4 text-center">
+                        <i class="fa fa-location-arrow" aria-hidden="true" style="font-size: 4vw;color: peru;"></i> <br>
+                        2001 ESTANCIA CIR <br>
+                        KISSIMMEE, FL 34741 <br>
+                    </div>
+                </div>
+
+            </div>
+        </section>
     </div>
     <script src="{{asset('js/main.js')}}"></script>
     <script src="{{asset('js/app.js')}}"></script>
