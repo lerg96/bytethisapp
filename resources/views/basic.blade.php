@@ -64,8 +64,7 @@
                 <canvas id="granim-canvas"></canvas>
                 <h1 class="text-center bestlover">Byte This App<br>
                     <small>@lang('messages.welcome')</small><br>
-                    <small style="font-size: 15%;">By <span style="color: blueviolet;">Guillermo Vera</span> &amp; <span
-                            style="color: coral;">Luis Romero</span></small>
+                    <small style="font-size: 15%;">By  <span style="color: coral;">Luis Romero</span></small>
                 </h1>
             </header>
         </section>
@@ -387,17 +386,17 @@
         <section id="section5" class="section">
             <div data-aos="zoom-in" class="container">
                 <div class="col-md-12 text-center hidden-xs">
-                    <h1>Información adicional</h1>
+                    <h1>@lang('messages.additional_information')</h1>
                 </div>
                 <div class="row">
                     <div class="col-md-4 text-center">
                         <i class="fa fa-envelope" aria-hidden="true" style="font-size: 4vw;color: orange;"></i>
-                        <br>guillverac@gmail.com <br> lerg96@gmail.com
+                        <br>lerg96@gmail.com
                     </div>
                     <hr class="hidden-md hidden-lg">
                     <div class="col-md-4 text-center">
                         <i class="fa fa-phone" aria-hidden="true" style="font-size: 4vw;color: orange;"></i>
-                        <br>+584246333813 <br> +14079528476
+                        <br>+584246333813 
                     </div>
                     <hr class="hidden-md hidden-lg">
                     <div class="col-md-4 text-center">

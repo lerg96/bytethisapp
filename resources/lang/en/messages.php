@@ -27,5 +27,6 @@ return [
     'message' => 'Message',
     'sumit' => 'Send message',
     'send' => 'Send your message!',
-    'thanks_contact' => 'Thanks for contacting us!'
+    'thanks_contact' => 'Thanks for contacting us!',
+    'additional_information' => 'Additional Information'
 ];
