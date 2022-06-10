@@ -9,8 +9,8 @@ return [
     */
 
     'welcome' => 'On the Internet, nobody knows you\'re a dog',
-    'title' => 'Are you looking for a web developer?',
-    'response' => 'With diverse skills framing HTML + CSS + Javascript design, all this about PHP. Working remotely for customers around the world. Mainly using Laravel + VueJS, without considering it a limitation for other frameworks like: Angular2, Drupal, Django, Ember.JS and more.',
+    'title' => 'About me',
+    'response' => 'Graduated in Computer Engineering from Alonso de Ojeda University. I have worked mainly in the area of web development, with experience in Laravel, Vue, angular, nodejs, aws, bootstrap, wordpress, pm2, git (bitbucket / github), docker, among others. I have worked mainly with remote clients, but also with some companies such as SyBTerramarine and for government entities on small projects.',
     'langs' => 'Languages',
     'habs' => 'Skills & Knowledge',
     'fw' => 'Main Frameworks',

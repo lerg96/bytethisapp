@@ -9,8 +9,8 @@ return [
     */
 
     'welcome' => 'En internet, nadie sabe que eres un perro',
-    'title' => '¿Buscas un desarrollador web?',
-    'response' => 'Con diversass habilidades enmarcando diseño de HTML + CSS + Javascript, todo esto sobre PHP. Trabajando de forma remota para clientes alrededor del mundo. Principalmente usando Laravel + VueJS, sin considerarlo una limitante para otros frameworks como: Angular2, Drupal, Django, ember.JS y más.',
+    'title' => 'Acerca de mi',
+    'response' => 'Egresado de Ingeniería en Computación en la Universidad Alonso de Ojeda. Trabajo principalmente en el area de desarrollo web, con experiencia en Laravel, Vue, angular, nodejs, aws, bootstrap, wordpress, pm2, git (bitbucket/github), docker, entre otros. He trabajado principalmente con clientes remotos, aunque también con algunas empresas como SyBTerramarine y para entes gubernamentales en pequeños proyectos.',
     'langs' => 'Lenguajes',
     'habs' => 'Habilidades & Conocimientos',
     'fw' => 'Frameworks principales',
@@ -28,5 +28,6 @@ return [
     'sumit' => 'Enviar Mensaje',
     'send' => '¡Envia tu mensaje!',
     'thanks_contact' => 'Gracias por contactarnos!',
-    'additional_information' => 'Información adicional'
+    'additional_information' => 'Información adicional',
+    'portafolio' => 'Portafolio'
 ];

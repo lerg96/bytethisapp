@@ -37,7 +37,16 @@
 
     <!-- Main Style -->
     <link rel="stylesheet" href="{{asset('css/app.css')}}">
-
+    <style>
+        .proyectos {
+            cursor: -moz-zoom-in;
+            cursor: -webkit-zoom-in;
+            cursor: zoom-in;
+        }
+        .proyectos h3 {
+          margin-top: 0 !important;
+        }
+    </style>
 </head>
 
 <body>
@@ -275,8 +284,72 @@
                 </div>
             </div>
         </section>
-        <!-- Contacto -->
+        <!-- Proyectos -->
         <section id="section4" class="section">
+            <!-- Titulo -->
+            <div class="slide" id="slide1">
+                <h1 data-aos="fade-right" class="bestlover text-center">@lang('messages.portafolio')</h1>
+            </div>
+            <!-- Lenguajes -->
+            <div class="slide" id="slide2">
+                <div class="container">
+                    <div class="col-md-4 col-xs-12 is-animated proyectos" data-img="/images/proyectos/mms.png">
+                        <div class="col-md-12 well">
+                            <img class="proyectos-img" src="/images/proyectos/mms.png" alt="">
+                            <h3 class="text-center">Proyecto MMS</h3>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-xs-12 is-animated proyectos" data-img="/images/proyectos/saro.png">
+                        <div class="col-md-12 well">
+                            <img class="proyectos-img" src="/images/proyectos/saro.png" alt="">
+                            <h3 class="text-center">Proyecto SARO</h3>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-xs-12 is-animated proyectos" data-img="/images/proyectos/camargues.png">
+                        <div class="col-md-12 well">
+                            <img class="proyectos-img" src="/images/proyectos/camargues.png" alt="">
+                            <h3 class="text-center">Carmargues</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="slide" id="slide3">
+                <div class="container">
+                    <div class="col-md-4 col-xs-12 is-animated proyectos" data-img="/images/proyectos/alcaldia_presupuesto.png">
+                        <div class="col-md-12 well">
+                            <img class="proyectos-img" src="/images/proyectos/alcaldia_presupuesto.png" alt="">
+                            <h3 class="text-center">Presupuesto</h3>
+
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-xs-12 is-animated proyectos" data-img="/images/proyectos/paypal_tools.png">
+                        <div class="col-md-12 well">
+                            <img class="proyectos-img" src="/images/proyectos/paypal_tools.png" alt="">
+                            <h3 class="text-center">Comisión Paypal</h3>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-xs-12 is-animated proyectos" data-img="/images/proyectos/quotes.png">
+                        <div class="col-md-12 well">
+                            <img class="proyectos-img" src="/images/proyectos/quotes.png" alt="">
+                            <h3 class="text-center">Quotes</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="slide" id="slide4">
+                <div class="container">
+                    <div class="col-md-4 col-xs-12 is-animated proyectos" data-img="/images/proyectos/instruval.png">
+                        <div class="col-md-12 well">
+                            <img class="proyectos-img" src="/images/proyectos/instruval.png" alt="">
+                            <h3 class="text-center">Instruval</h3>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Contacto -->
+{{--        <section id="section5" class="section">--}}
             <!-- pequeño -->
             {{-- <div data-aos="zoom-in" class="container hidden-sm hidden-md hidden-lg">
                 <div class="well well-sm">
@@ -326,64 +399,63 @@
                 </div>
             </div> --}}
             <!-- grande -->
-            <div data-aos="zoom-in" class="container">
-                <div class="col-md-12 text-center hidden-xs">
-                    <h1>@lang('messages.send')</h1>
-                </div>
-                <div class="jumbotron" id="jumbotronDiv">
-                    <div class="well well-sm">
-                        <div class="row">
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <label for="name">
-                                        @lang('messages.name')</label>
-                                    <input type="text" class="form-control" id="name" name="name"
-                                        placeholder="@lang('messages.inname')" required="required">
-                                </div>
-                                <div class="form-group">
-                                    <label for="email">
-                                        @lang('messages.mail')</label>
-                                    <div class="input-group">
-                                        <span class="input-group-addon"><span
-                                                class="glyphicon glyphicon-envelope"></span>
-                                        </span>
-                                        <input type="email" class="form-control" name="email" id="email"
-                                            placeholder="@lang('messages.inmail')" required="required"></div>
-                                </div>
-                                <div class="form-group">
-                                    <label for="subject">
-                                        @lang('messages.subject')</label>
-                                    <select id="subject" name="subject" class="form-control" required="required">
-                                        <option value="na" selected="">@lang('messages.select')</option>
-                                        <option value="service">@lang('messages.service')</option>
-                                        <option value="suggestions">@lang('messages.suggestions')</option>
-                                        <option value="product">@lang('messages.product')</option>
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <label for="name">
-                                        @lang('messages.message')</label>
-                                    <textarea name="message" id="message" class="form-control" rows="7" cols="25"
-                                        required="required" placeholder="@lang('messages.message')"></textarea>
-                                </div>
-                            </div>
-                            <div class="col-md-12">
-                                <button type="button" class="btn btn-primary pull-right" id="btnContactUs">
-                                    @lang('messages.sumit')
-                                </button>
-                            </div>
-                        </div>
+{{--            <div data-aos="zoom-in" class="container">--}}
+{{--                <div class="col-md-12 text-center hidden-xs">--}}
+{{--                    <h1>@lang('messages.send')</h1>--}}
+{{--                </div>--}}
+{{--                <div class="jumbotron" id="jumbotronDiv">--}}
+{{--                    <div class="well well-sm">--}}
+{{--                        <div class="row">--}}
+{{--                            <div class="col-md-6">--}}
+{{--                                <div class="form-group">--}}
+{{--                                    <label for="name">--}}
+{{--                                        @lang('messages.name')</label>--}}
+{{--                                    <input type="text" class="form-control" id="name" name="name"--}}
+{{--                                        placeholder="@lang('messages.inname')" required="required">--}}
+{{--                                </div>--}}
+{{--                                <div class="form-group">--}}
+{{--                                    <label for="email">--}}
+{{--                                        @lang('messages.mail')</label>--}}
+{{--                                    <div class="input-group">--}}
+{{--                                        <span class="input-group-addon"><span--}}
+{{--                                                class="glyphicon glyphicon-envelope"></span>--}}
+{{--                                        </span>--}}
+{{--                                        <input type="email" class="form-control" name="email" id="email"--}}
+{{--                                            placeholder="@lang('messages.inmail')" required="required"></div>--}}
+{{--                                </div>--}}
+{{--                                <div class="form-group">--}}
+{{--                                    <label for="subject">--}}
+{{--                                        @lang('messages.subject')</label>--}}
+{{--                                    <select id="subject" name="subject" class="form-control" required="required">--}}
+{{--                                        <option value="na" selected="">@lang('messages.select')</option>--}}
+{{--                                        <option value="service">@lang('messages.service')</option>--}}
+{{--                                        <option value="suggestions">@lang('messages.suggestions')</option>--}}
+{{--                                        <option value="product">@lang('messages.product')</option>--}}
+{{--                                    </select>--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
+{{--                            <div class="col-md-6">--}}
+{{--                                <div class="form-group">--}}
+{{--                                    <label for="name">--}}
+{{--                                        @lang('messages.message')</label>--}}
+{{--                                    <textarea name="message" id="message" class="form-control" rows="7" cols="25"--}}
+{{--                                        required="required" placeholder="@lang('messages.message')"></textarea>--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
+{{--                            <div class="col-md-12">--}}
+{{--                                <button type="button" class="btn btn-primary pull-right" id="btnContactUs">--}}
+{{--                                    @lang('messages.sumit')--}}
+{{--                                </button>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
 
-                    </div>
-                </div>
+{{--                    </div>--}}
+{{--                </div>--}}
 
-            </div>
-        </section>
-
+{{--            </div>--}}
+{{--        </section>--}}
         <!-- Info -->
-        <section id="section5" class="section">
+        <section id="section6" class="section">
             <div data-aos="zoom-in" class="container">
                 <div class="col-md-12 text-center hidden-xs">
                     <h1>@lang('messages.additional_information')</h1>
@@ -401,16 +473,37 @@
                     <hr class="hidden-md hidden-lg">
                     <div class="col-md-4 text-center">
                         <i class="fa fa-location-arrow" aria-hidden="true" style="font-size: 4vw;color: peru;"></i> <br>
-                        2001 ESTANCIA CIR <br>
-                        KISSIMMEE, FL 34741 <br>
+                         <br>
+                        Venezuela <br>
                     </div>
                 </div>
 
             </div>
         </section>
     </div>
+    <div class="modal fade" id="imagemodal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    &nbsp;
+                    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                </div>
+                <div class="modal-body">
+                    <img src="" id="imagepreview" style="width: 100%;" >
+                </div>
+            </div>
+        </div>
+    </div>
     <script src="{{asset('js/main.js')}}"></script>
     <script src="{{asset('js/app.js')}}"></script>
+    <script>
+        $(".proyectos").on("click", function() {
+
+            $('#imagepreview').attr('src', this.getAttribute('data-img')); // here asign the image to the modal when the user click the enlarge link
+            $('#imagemodal').modal('show'); // imagemodal is the id attribute assigned to the bootstrap modal, then i use the show function
+        });
+    </script>
+
     <!-- Built with love using Web Starter Kit -->
 </body>
 
